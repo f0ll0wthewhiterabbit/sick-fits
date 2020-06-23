@@ -1,5 +1,19 @@
 import Link from 'next/link'
+import Router from 'next/router'
 import styled from 'styled-components'
+import NProgress from 'nprogress'
+
+Router.onRouteChangeStart = () => {
+  NProgress.start()
+}
+
+Router.onRouteChangeComplete = () => {
+  NProgress.done()
+}
+
+Router.onRouteChangeError = () => {
+  NProgress.done()
+}
 
 import Nav from './Nav'
 
